@@ -7,8 +7,8 @@ app = Flask(__name__)
 CORS(app)
 COUNT = 0
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'pras_raja'
-app.config['MYSQL_PASSWORD'] = 'mobile6120'
+app.config['MYSQL_USER'] = '####'
+app.config['MYSQL_PASSWORD'] = '###'
 app.config['MYSQL_DB'] = 'flask-Ng'
 app.secret_key = 'thai samosa' 
 
