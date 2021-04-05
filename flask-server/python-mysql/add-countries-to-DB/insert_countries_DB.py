@@ -32,6 +32,6 @@ def insert():
 					(Order_ID, First_Name, Last_Name, Email, Product_ID, Quantity, Unit_Price, Country, State, City) values
 					(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);''', data)
 	mysql.connection.commit()
-	return jsonify(data[1:10])
+	return jsonify(data[1:10]) 
 
 
