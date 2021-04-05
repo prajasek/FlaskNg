@@ -10,8 +10,8 @@ geolocs = json.load(SCC)
 app = Flask(__name__)
 CORS(app)
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'pras_raja'
-app.config['MYSQL_PASSWORD'] = 'mobile6120'
+app.config['MYSQL_USER'] = '####'
+app.config['MYSQL_PASSWORD'] = '###'
 app.config['MYSQL_DB'] = 'flask-Ng'
 mysql = MySQL(app)
 
