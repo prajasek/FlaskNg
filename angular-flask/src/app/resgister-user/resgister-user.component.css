@@ -1,0 +1,33 @@
+input {
+    width: 20%;
+}
+
+.input-group  {
+    width: 50% ;
+    left: 25% ;
+}
+
+.btn {
+    margin-top : 1%;
+    margin-left:50%;
+    background-color: rgb(54, 54, 54);
+}
+
+.border{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.row {
+   margin-top:15%;
+}
+
+.input-group-addon{
+    background-color: rgb(66, 66, 66);
+    color: white;
+}
+
+.login{
+    margin-top:2.5%;
+}

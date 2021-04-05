@@ -1,6 +1,6 @@
 import json
 
-countries_data = open("./data/countries.json")
+countries_data = open("../../data/Countries-State-Cities_CleanedUp/countries.json")
 countries = json.load(countries_data)
 
 STATES_CITIES_COUNTRIES = [];
@@ -16,6 +16,6 @@ for country in  countries:
 	
 SCC = json.dumps(STATES_CITIES_COUNTRIES) 
 print(SCC)
-output = open("SCC.json", 'w')
+output = open("country-state-city.json", 'w')
 output.write(SCC)
 output.close()

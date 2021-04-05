@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_mysqldb import MySQL
 import json, random
 
-SCC = open('SCC.json')
+SCC = open('../dump-countries-toJson/state-city-country.json')
 geolocs = json.load(SCC)
 
  
@@ -22,8 +22,7 @@ def insert():
 	cur.execute(''' select * from purchaseOrdersMain''')
 	rv = cur.fetchall()   # a tuple ((col1,col2...coln), (col1,col2, ...coln).... (..))
 	geolocs = [random.choice(geolocs) for _ in range(len(rv))]								 
-	
-	#data = [(order_id, f_name, l_name, email, p_id, qty, u_price, *g) for order_id, f_name, l_name, email, p_id, qty, u_price, g in zip(rv
+
 	data = [(*r, *g) for r, g in zip(rv, geolocs)]
 	print("\n\nDebug:\n\n")
 	print(len(data), len(rv))
@@ -36,22 +35,3 @@ def insert():
 	return jsonify(data[1:10])
 
 
-
-'''
-@app.route("/")
-def home():
-	length = [_ for _ in range(100)]
-	values = [_ for _ in range(100,200)]
-	geoloc = [random.choice(geolocs) for _ in range(100)]
-	
-	params = [(l, v, *g) for l,v,g in zip(length, values, geoloc)]
-	cur = mysql.connection.cursor()
-	cur.executemany("""INSERT INTO countries_test 
-	(countries_test, column_2, country, state, city) values (%s, %s, %s, %s, %s);""", params)
-	mysql.connection.commit()
-	return jsonify(params)
-
-
-print("All done!")
-
-'''
